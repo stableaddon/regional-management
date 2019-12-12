@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Stableaddon_RegionalManagement::regional_management" title="Manage Address" translate="title" module="Stableaddon_RegionalManagement" sortOrder="100" parent="Magento_Customer::customer" resource="Stableaddon_RegionalManagement::regional_management" />
+        <add id="Stableaddon_RegionalManagement::region" title="Manage Province" module="Stableaddon_RegionalManagement" sortOrder="65" parent="Stableaddon_RegionalManagement::regional_management" action="regional_management/region" resource="Stableaddon_RegionalManagement::region"/>
+        <add id="Stableaddon_RegionalManagement::city" title="Manage Districts" module="Stableaddon_RegionalManagement" sortOrder="67" parent="Stableaddon_RegionalManagement::regional_management" action="regional_management/city" resource="Stableaddon_RegionalManagement::city"/>
+        <add id="Stableaddon_RegionalManagement::sub_district" title="Manage Sub Districts" module="Stableaddon_RegionalManagement" sortOrder="69" parent="Stableaddon_RegionalManagement::regional_management" action="regional_management/sub_district" resource="Stableaddon_RegionalManagement::sub_district"/>
+        <add id="Stableaddon_RegionalManagement::import" title="Import" module="Stableaddon_RegionalManagement" sortOrder="69" parent="Stableaddon_RegionalManagement::regional_management" action="adminhtml/import" resource="Stableaddon_RegionalManagement::import"/>
+    </menu>
+</config>

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Checkout\Block\Checkout\DirectoryDataProcessor">
+        <plugin name="Stableaddon_RegionalManagement::directory_data_processor" type="Stableaddon\RegionalManagement\Plugin\Block\Checkout\DirectoryDataProcessor" sortOrder="1"/>
+    </type>
+    <type name="Magento\Checkout\Block\Checkout\LayoutProcessor">
+        <plugin name="Stableaddon_RegionalManagement::checkout_layout_processor" type="Stableaddon\RegionalManagement\Plugin\Checkout\LayoutProcessor"/>
+    </type>
+</config>

@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="admin">
+        <route id="regional_management" frontName="regional_management">
+            <module name="Stableaddon_RegionalManagement" before="Magento_Backend" />
+        </route>
+    </router>
+</config>

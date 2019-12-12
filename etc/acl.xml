@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Stableaddon_RegionalManagement::region" title="Regions Manager - Region">
+                    <resource id="Stableaddon_RegionalManagement::region_create" title="Create"/>
+                    <resource id="Stableaddon_RegionalManagement::region_edit" title="Edit" />
+                    <resource id="Stableaddon_RegionalManagement::region_delete" title="Delete"/>
+                </resource>
+                <resource id="Stableaddon_RegionalManagement::region_name" title="Regions Manager - Region Name">
+                    <resource id="Stableaddon_RegionalManagement::region_name_create" title="Create"/>
+                    <resource id="Stableaddon_RegionalManagement::region_name_edit" title="Edit" />
+                    <resource id="Stableaddon_RegionalManagement::region_name_delete" title="Delete"/>
+                </resource>
+                <resource id="Stableaddon_RegionalManagement::city" title="Regions Manager - District">
+                    <resource id="Stableaddon_RegionalManagement::city_create" title="Create"/>
+                    <resource id="Stableaddon_RegionalManagement::city_edit" title="Edit" />
+                    <resource id="Stableaddon_RegionalManagement::city_delete" title="Delete"/>
+                </resource>
+                <resource id="Stableaddon_RegionalManagement::city_name" title="Regions Manager - City Name">
+                    <resource id="Stableaddon_RegionalManagement::city_name_create" title="Create"/>
+                    <resource id="Stableaddon_RegionalManagement::city_name_edit" title="Edit" />
+                    <resource id="Stableaddon_RegionalManagement::city_name_delete" title="Delete"/>
+                </resource>
+                <resource id="Stableaddon_RegionalManagement::sub_district" title="Regions Manager - Sub District">
+                    <resource id="Stableaddon_RegionalManagement::sub_district_create" title="Create"/>
+                    <resource id="Stableaddon_RegionalManagement::sub_district_edit" title="Edit" />
+                    <resource id="Stableaddon_RegionalManagement::sub_district_delete" title="Delete"/>
+                </resource>
+                <resource id="Stableaddon_RegionalManagement::sub_district_name" title="Regions Manager - Sub District Name">
+                    <resource id="Stableaddon_RegionalManagement::sub_district_name_create" title="Create"/>
+                    <resource id="Stableaddon_RegionalManagement::sub_district_name_edit" title="Edit" />
+                    <resource id="Stableaddon_RegionalManagement::sub_district_name_delete" title="Delete"/>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

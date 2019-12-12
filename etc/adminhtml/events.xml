@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="checkout_submit_all_after">
+        <observer name="admin_update_order_address_book" instance="Stableaddon\RegionalManagement\Observer\UpdateOrderAddress" />
+    </event>
+    <event name="core_copy_fieldset_sales_copy_order_shipping_address_to_order">
+        <observer name="custom_core_copy_fieldset_sales_copy_order_shipping_address_to_order" instance="Stableaddon\RegionalManagement\Observer\Adminhtml\OrderShippingToQuote" />
+    </event>
+    <event name="core_copy_fieldset_sales_copy_order_billing_address_to_order">
+        <observer name="custom_core_copy_fieldset_sales_copy_order_billing_address_to_order" instance="Stableaddon\RegionalManagement\Observer\Adminhtml\OrderBillingToQuote" />
+    </event>
+</config>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="customer_address_save_after">
+        <observer name="update_customer_address_data" instance="Stableaddon\RegionalManagement\Observer\UpdateCustomerAddress" />
+    </event>
+    <event name="sales_model_service_quote_submit_before">
+        <observer name="update_order_address_data" instance="Stableaddon\RegionalManagement\Observer\UpdateOrderAddress" />
+    </event>
+    <event name="checkout_submit_all_after">
+        <observer name="update_customer_address_book" instance="Stableaddon\RegionalManagement\Observer\SaveAddressList" />
+    </event>
+</config>

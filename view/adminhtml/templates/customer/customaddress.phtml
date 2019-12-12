@@ -1,0 +1,25 @@
+<?php
+    $_helper = $this->helper('Stableaddon\RegionalManagement\Helper\Data');
+?>
+
+<script type="text/javascript">
+    window.postcodeJson = <?php /* @escapeNotVerified */ echo $_helper->getPostcodeJson() ?>;
+    setInterval(initSelectChange, 1000);
+
+    function initSelectChange() {
+        require([
+            'jquery',
+            'domReady!'
+        ], function ($) {
+            $('select[name="city_id"]').on('change', function () {
+                $('input[name="city').val($('select[name="city_id"] option:selected').text());
+                $('input[name="city').trigger('change');
+            });
+
+            $('select[name="sub_district_id"]').on('change', function () {
+                $('input[name="sub_district').val($('select[name="sub_district_id"] option:selected').text());
+                $('input[name="sub_district').trigger('change');
+            });
+        });
+    }
+</script>

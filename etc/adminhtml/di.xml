@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\ImportExport\Controller\Adminhtml\Import\Download">
+        <plugin name="Stableaddon_RegionalManagement::Import" type="Stableaddon\RegionalManagement\Plugin\Import\Download" />
+    </type>
+    <preference for="Magento\Sales\Block\Adminhtml\Order\Create\Shipping\Address" type="Stableaddon\RegionalManagement\Block\Adminhtml\Order\Create\Shipping\Address" />
+    <preference for="Magento\Sales\Block\Adminhtml\Order\Create\Billing\Address" type="Stableaddon\RegionalManagement\Block\Adminhtml\Order\Create\Billing\Address" />
+    <preference for="Magento\Sales\Block\Adminhtml\Order\Address\Form" type="Stableaddon\RegionalManagement\Block\Adminhtml\Order\Address\Form" />
+    <type name="Magento\Sales\Model\AdminOrder\Create">
+        <plugin name="Stableaddon_RegionalManagement::Adminorder_Create" type="Stableaddon\RegionalManagement\Plugin\Magento\Sales\Model\AdminOrder\Create" />
+    </type>
+</config>

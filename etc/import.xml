@@ -1,0 +1,10 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_ImportExport:etc/import.xsd">
+    <entity name="directory_city" label="District" model="Stableaddon\RegionalManagement\Model\Import\City" behaviorModel="Magento\ImportExport\Model\Source\Import\Behavior\Basic" />
+    <entity name="directory_city_name" label="District - Translations" model="Stableaddon\RegionalManagement\Model\Import\CityName" behaviorModel="Magento\ImportExport\Model\Source\Import\Behavior\Basic" />
+    <entity name="directory_region" label="Province" model="Stableaddon\RegionalManagement\Model\Import\Region" behaviorModel="Magento\ImportExport\Model\Source\Import\Behavior\Basic" />
+    <entity name="directory_region_name" label="Province - Translations" model="Stableaddon\RegionalManagement\Model\Import\RegionName" behaviorModel="Magento\ImportExport\Model\Source\Import\Behavior\Basic" />
+    <entity name="directory_sub_district" label="Sub Districts"
+            model="Stableaddon\RegionalManagement\Model\Import\SubDistrict" behaviorModel="Magento\ImportExport\Model\Source\Import\Behavior\Basic" />
+    <entity name="directory_sub_district_name" label="Sub Districts - Translations "
+            model="Stableaddon\RegionalManagement\Model\Import\DistrictName" behaviorModel="Magento\ImportExport\Model\Source\Import\Behavior\Basic" />
+</config>

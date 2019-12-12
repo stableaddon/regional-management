@@ -1,0 +1,18 @@
+{
+	"name": "stableaddon/regional-management",
+	"description": "Stableaddon Regional Management",
+	"type": "magento2-module",
+	"version": "1.0.0",
+	"require": {
+		"magento/module-customer": "*"
+	},
+	"autoload": {
+		"files": [
+			"registration.php"
+		],
+		"psr-4": {
+			"Stableaddon\\RegionalManagement\\": ""
+		}
+	}
+}
+

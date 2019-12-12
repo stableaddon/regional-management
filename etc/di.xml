@@ -1,0 +1,194 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <virtualType name="StableaddonRegionGirdFilterPool" type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
+        <arguments>
+            <argument name="appliers" xsi:type="array">
+                <item name="regular" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter</item>
+                <item name="fulltext" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\FulltextFilter</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="StableaddonRegionRegionGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Stableaddon\RegionalManagement\Model\ResourceModel\Region\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">StableaddonRegionGirdFilterPool</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="Stableaddon\RegionalManagement\Model\ResourceModel\Region\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">directory_country_region</argument>
+            <argument name="eventPrefix" xsi:type="string">directory_country_region_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">region_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Magento\Directory\Model\ResourceModel\Region</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="region_listing_data_source" xsi:type="string">Stableaddon\RegionalManagement\Model\ResourceModel\Region\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="RegionsmanagerRegionnameGirdFilterPool" type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
+        <arguments>
+            <argument name="appliers" xsi:type="array">
+                <item name="regular" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter</item>
+                <item name="fulltext" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\FulltextFilter</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="RegionsmanagerRegionnameGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Stableaddon\RegionalManagement\Model\ResourceModel\RegionName\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">RegionsmanagerRegionnameGirdFilterPool</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="Stableaddon\RegionalManagement\Model\ResourceModel\RegionName\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">directory_country_region_name</argument>
+            <argument name="eventPrefix" xsi:type="string">directory_country_regionname_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">regionname_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Stableaddon\RegionalManagement\Model\ResourceModel\RegionName</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="region_name_listing_data_source" xsi:type="string">Stableaddon\RegionalManagement\Model\ResourceModel\RegionName\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="RegionsmanagerCityGirdFilterPool" type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
+        <arguments>
+            <argument name="appliers" xsi:type="array">
+                <item name="regular" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter</item>
+                <item name="fulltext" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\FulltextFilter</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="RegionsmanagerCityGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Stableaddon\RegionalManagement\Model\ResourceModel\City\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">RegionsmanagerCityGirdFilterPool</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="Stableaddon\RegionalManagement\Model\ResourceModel\City\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">directory_region_city</argument>
+            <argument name="eventPrefix" xsi:type="string">directory_region_city_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">city_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Stableaddon\RegionalManagement\Model\ResourceModel\City</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="city_listing_data_source" xsi:type="string">Stableaddon\RegionalManagement\Model\ResourceModel\City\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <!--begin cityname-->
+    <virtualType name="RegionsmanagerCitynameGirdFilterPool" type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
+        <arguments>
+            <argument name="appliers" xsi:type="array">
+                <item name="regular" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter</item>
+                <item name="fulltext" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\FulltextFilter</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="RegionsmanagerCitynameGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Stableaddon\RegionalManagement\Model\ResourceModel\CityName\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">RegionsmanagerCitynameGirdFilterPool</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="Stableaddon\RegionalManagement\Model\ResourceModel\CityName\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">directory_region_city_name</argument>
+            <argument name="eventPrefix" xsi:type="string">directory_city_name_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">cityname_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Stableaddon\RegionalManagement\Model\ResourceModel\CityName</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="city_name_listing_data_source" xsi:type="string">Stableaddon\RegionalManagement\Model\ResourceModel\CityName\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <!--end cityname-->
+
+    <!--begin sub-district-name-->
+    <virtualType name="RegionsmanagerSubDistrictnameGirdFilterPool" type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
+        <arguments>
+            <argument name="appliers" xsi:type="array">
+                <item name="regular" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter</item>
+                <item name="fulltext" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\FulltextFilter</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="RegionsmanagerSubDistrictnameGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Stableaddon\RegionalManagement\Model\ResourceModel\SubDistrictName\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">RegionsmanagerSubDistrictnameGirdFilterPool</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="Stableaddon\RegionalManagement\Model\ResourceModel\SubDistrictName\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">directory_city_district_name</argument>
+            <argument name="eventPrefix" xsi:type="string">directory_sub_district_name_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">subdistrictname_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Stableaddon\RegionalManagement\Model\ResourceModel\SubDistrictName</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="sub_district_name_listing_data_source" xsi:type="string">Stableaddon\RegionalManagement\Model\ResourceModel\SubDistrictName\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <!--end sub-district-name-->
+    <virtualType name="RegionsmanagerSubDistrictGirdFilterPool" type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
+        <arguments>
+            <argument name="appliers" xsi:type="array">
+                <item name="regular" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter</item>
+                <item name="fulltext" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\FulltextFilter</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="RegionsmanagerSubDistrictGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Stableaddon\RegionalManagement\Model\ResourceModel\SubDistrict\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">RegionsmanagerSubDistrictGirdFilterPool</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="Stableaddon\RegionalManagement\Model\ResourceModel\SubDistrict\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">directory_city_district</argument>
+            <argument name="eventPrefix" xsi:type="string">directory_city_sub_district_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">sub_district_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Stableaddon\RegionalManagement\Model\ResourceModel\SubDistrict</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="sub_district_listing_data_source" xsi:type="string">Stableaddon\RegionalManagement\Model\ResourceModel\SubDistrict\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <preference for="Magento\Directory\Model\ResourceModel\Region\Collection" type="Stableaddon\RegionalManagement\Model\ResourceModel\Region\Collection" />
+
+    <type name="Magento\Quote\Model\BillingAddressManagement">
+        <plugin disabled="false" name="Stableaddon_RegionalManagement_Plugin_Magento_Quote_Model_BillingAddressManagement" sortOrder="10" type="Stableaddon\RegionalManagement\Plugin\Magento\Quote\Model\BillingAddressManagement"/>
+    </type>
+    <type name="Magento\Quote\Model\ShippingAddressManagement">
+        <plugin disabled="false" name="Stableaddon_RegionalManagement_Plugin_Magento_Quote_Model_ShippingAddressManagement" sortOrder="10" type="Stableaddon\RegionalManagement\Plugin\Magento\Quote\Model\ShippingAddressManagement"/>
+    </type>
+    <type name="Magento\Quote\Model\Quote">
+        <plugin disabled="false" name="Stableaddon_RegionalManagement_Plugin_Magento_Quote_Model_Quote" sortOrder="10" type="Stableaddon\RegionalManagement\Plugin\Magento\Quote\Model\Quote"/>
+    </type>
+</config>
