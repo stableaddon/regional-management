@@ -11,7 +11,7 @@ class DistrictName extends \Magento\ImportExport\Model\Import\Entity\AbstractEnt
     const DEFAULT_NAME = 'name';
     const CODE = 'locale';
     const COUNTRY = 'district_id';
-    const TABLE_Entity = 'directory_city_district_name';
+    const TABLE_ENTITY = 'directory_city_district_name';
 
     /**
      * Validation failure message template definitions
@@ -111,7 +111,7 @@ class DistrictName extends \Magento\ImportExport\Model\Import\Entity\AbstractEnt
      */
     public function getEntityTypeCode()
     {
-        return 'directory_city_district_name';
+        return 'directory_sub_district_name';
     }
 
     /**
@@ -201,7 +201,7 @@ class DistrictName extends \Magento\ImportExport\Model\Import\Entity\AbstractEnt
             }
         }
         if ($listTitle) {
-            $this->deleteEntityFinish(array_unique($listTitle), self::TABLE_Entity);
+            $this->deleteEntityFinish(array_unique($listTitle), self::TABLE_ENTITY);
         }
 
         return $this;
@@ -242,12 +242,12 @@ class DistrictName extends \Magento\ImportExport\Model\Import\Entity\AbstractEnt
             }
             if (\Magento\ImportExport\Model\Import::BEHAVIOR_REPLACE == $behavior) {
                 if ($listTitle) {
-                    if ($this->deleteEntityFinish(array_unique($listTitle), self::TABLE_Entity)) {
-                        $this->saveEntityFinish($entityList, self::TABLE_Entity);
+                    if ($this->deleteEntityFinish(array_unique($listTitle), self::TABLE_ENTITY)) {
+                        $this->saveEntityFinish($entityList, self::TABLE_ENTITY);
                     }
                 }
             } elseif (\Magento\ImportExport\Model\Import::BEHAVIOR_APPEND == $behavior) {
-                $this->saveEntityFinish($entityList, self::TABLE_Entity);
+                $this->saveEntityFinish($entityList, self::TABLE_ENTITY);
             }
         }
 

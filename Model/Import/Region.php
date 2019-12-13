@@ -18,7 +18,7 @@ class Region extends \Magento\ImportExport\Model\Import\Entity\AbstractEntity
     const DEFAULT_NAME = 'default_name';
     const CODE = 'code';
     const COUNTRY = 'country_id';
-    const TABLE_Entity = 'directory_country_region';
+    const TABLE_ENTITY = 'directory_country_region';
 
     /**
      * Json Serializer Instance
@@ -125,7 +125,7 @@ class Region extends \Magento\ImportExport\Model\Import\Entity\AbstractEntity
      */
     public function getEntityTypeCode()
     {
-        return 'directory_country_region';
+        return 'directory_region';
     }
 
     /**
@@ -295,7 +295,7 @@ class Region extends \Magento\ImportExport\Model\Import\Entity\AbstractEntity
             }
         }
         if ($listTitle) {
-            $this->deleteEntityFinish(array_unique($listTitle), self::TABLE_Entity);
+            $this->deleteEntityFinish(array_unique($listTitle), self::TABLE_ENTITY);
         }
 
         return $this;
@@ -336,12 +336,12 @@ class Region extends \Magento\ImportExport\Model\Import\Entity\AbstractEntity
             }
             if (\Magento\ImportExport\Model\Import::BEHAVIOR_REPLACE == $behavior) {
                 if ($listTitle) {
-                    if ($this->deleteEntityFinish(array_unique($listTitle), self::TABLE_Entity)) {
-                        $this->saveEntityFinish($entityList, self::TABLE_Entity);
+                    if ($this->deleteEntityFinish(array_unique($listTitle), self::TABLE_ENTITY)) {
+                        $this->saveEntityFinish($entityList, self::TABLE_ENTITY);
                     }
                 }
             } elseif (\Magento\ImportExport\Model\Import::BEHAVIOR_APPEND == $behavior) {
-                $this->saveEntityFinish($entityList, self::TABLE_Entity);
+                $this->saveEntityFinish($entityList, self::TABLE_ENTITY);
             }
         }
 

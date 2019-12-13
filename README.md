@@ -60,7 +60,7 @@ address form for Magento2.
         - Show district, sub district as dropdown in address form.
         - Manage Region, District, Sub District in backend. 
         - Import region, district, sub district, import translate file.
-
+    * 1.0.1 Fix import data
         
 ## Compatible
     Magento version 2.3.x

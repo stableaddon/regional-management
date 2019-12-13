@@ -28,7 +28,7 @@ class City extends \Magento\ImportExport\Model\Import\Entity\AbstractEntity
     /**
      * @var string
      */
-    const TABLE_Entity = 'directory_region_city';
+    const TABLE_ENTITY = 'directory_region_city';
 
     /**
      * Json Serializer Instance
@@ -155,7 +155,7 @@ class City extends \Magento\ImportExport\Model\Import\Entity\AbstractEntity
      */
     public function getEntityTypeCode()
     {
-        return 'directory_region_city';
+        return 'directory_city';
     }
 
     /**
@@ -326,7 +326,7 @@ class City extends \Magento\ImportExport\Model\Import\Entity\AbstractEntity
             }
         }
         if ($listTitle) {
-            $this->deleteEntityFinish(array_unique($listTitle), self::TABLE_Entity);
+            $this->deleteEntityFinish(array_unique($listTitle), self::TABLE_ENTITY);
         }
 
         return $this;
@@ -366,12 +366,12 @@ class City extends \Magento\ImportExport\Model\Import\Entity\AbstractEntity
             }
             if (\Magento\ImportExport\Model\Import::BEHAVIOR_REPLACE == $behavior) {
                 if ($listTitle) {
-                    if ($this->deleteEntityFinish(array_unique($listTitle), self::TABLE_Entity)) {
-                        $this->saveEntityFinish($entityList, self::TABLE_Entity);
+                    if ($this->deleteEntityFinish(array_unique($listTitle), self::TABLE_ENTITY)) {
+                        $this->saveEntityFinish($entityList, self::TABLE_ENTITY);
                     }
                 }
             } elseif (\Magento\ImportExport\Model\Import::BEHAVIOR_APPEND == $behavior) {
-                $this->saveEntityFinish($entityList, self::TABLE_Entity);
+                $this->saveEntityFinish($entityList, self::TABLE_ENTITY);
             }
         }
 
